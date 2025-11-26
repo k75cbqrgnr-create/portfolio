@@ -34,11 +34,23 @@
       h2 {
         margin-top: 32px;
       }
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .gallery img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 4px;
+      }
     </style>
   </head>
   <body>
     <header>
-      <h1>Portfolio de Loelie</h1>
+      <h1>PORTFOLIO DE LOELIE</h1>
       <nav>
         <a href="#portfolio">Portfolio</a>
         <a href="#apropos">À propos</a>
@@ -49,17 +61,25 @@
     <main>
       <section id="portfolio">
         <h2>Portfolio</h2>
-        <p>Ici je mettrai mes photos.</p>
+        <div class="gallery">
+          <img src="photo1.jpg" alt="Photo 1">
+          <img src="photo2.jpg" alt="Photo 2">
+          <img src="photo3.jpg" alt="Photo 3">
+        </div>
       </section>
 
       <section id="apropos">
         <h2>À propos</h2>
-        <p>Je suis Loelie, passionnée de photo sportive.</p>
+        <p>
+          Je suis Loelie, passionnée de photo (portraits, sport, etc.).
+        </p>
       </section>
 
       <section id="contact">
         <h2>Contact</h2>
-        <p>Tu peux me contacter à l’adresse : loelie.fior13@gmail.com</p>
+        <p>
+          Tu peux me contacter à l’adresse : tonmail@example.com
+        </p>
       </section>
     </main>
   </body>
