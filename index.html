@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
     <title>Portfolio de Loelie</title>
     <style>
       body {
@@ -11,129 +11,396 @@
         color: #f5f5f5;
       }
 
+      a {
+        color: inherit;
+      }
+
       header {
-        padding: 16px;
-        text-align: center;
+        padding: 14px 20px;
         border-bottom: 1px solid #333;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
       }
 
-      h1 {
+      header h1 {
         margin: 0;
-        text-transform: uppercase;
+        font-size: 18px;
         letter-spacing: 2px;
+        text-transform: uppercase;
       }
 
-      nav {
-        margin-top: 6px;
-      }
-
-      nav a {
-        margin: 0 8px;
-        text-decoration: none;
-        color: #f5f5f5;
+      header nav a {
+        margin-left: 12px;
         font-size: 14px;
+        text-decoration: none;
       }
 
       main {
-        max-width: 1000px;
+        max-width: 1100px;
         margin: 0 auto;
         padding: 24px 16px 40px;
       }
 
-      h2 {
-        margin-top: 32px;
-      }
-
-      h3 {
-        margin-top: 24px;
-      }
+      /* HERO (photo de toi + texte) */
 
       .hero {
-        text-align: center;
+        display: grid;
+        grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+        gap: 24px;
+        align-items: center;
         margin-top: 24px;
       }
 
-      .hero p {
-        max-width: 650px;
-        margin: 8px auto 0;
+      .hero-photo img {
+        width: 100%;
+        max-height: 380px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .hero-text h2 {
+        margin: 0 0 10px 0;
+        font-size: 26px;
+      }
+
+      .hero-text p {
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .hero-buttons {
+        margin-top: 18px;
       }
 
       .btn {
         display: inline-block;
-        margin-top: 16px;
         padding: 10px 18px;
         border-radius: 4px;
         border: 1px solid #f5f5f5;
         text-decoration: none;
-        color: #f5f5f5;
         font-size: 14px;
       }
 
-      .category-nav {
-        list-style: none;
-        padding: 0;
-        margin: 18px 0 8px;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
+      .btn-primary {
+        background: #f5f5f5;
+        color: #111;
+        margin-right: 8px;
       }
 
-      .category-nav li a {
-        border: 1px solid #444;
-        border-radius: 20px;
-        padding: 6px 14px;
+      .btn-ghost {
+        border-color: #666;
+      }
+
+      /* LIENS RÉSEAUX SUR LA PAGE D’ACCUEIL */
+
+      .social-links {
+        margin-top: 14px;
         font-size: 13px;
-        text-decoration: none;
+        color: #ccc;
+      }
+
+      .social-links span {
+        margin-right: 8px;
+        font-weight: bold;
         color: #f5f5f5;
+      }
+
+      .social-links a {
+        margin-right: 10px;
+        text-decoration: none;
+        border-bottom: 1px dotted #666;
+        padding-bottom: 1px;
+      }
+
+      /* MENU DES SPORTS */
+
+      #portfolio-menu {
+        margin-top: 40px;
+      }
+
+      #portfolio-menu h2 {
+        margin-bottom: 8px;
+      }
+
+      #portfolio-menu p {
+        margin-top: 0;
+        margin-bottom: 16px;
+      }
+
+      .sport-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+      }
+
+      .sport-card {
+        border: 1px solid #333;
+        border-radius: 8px;
+        padding: 12px 14px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .sport-card h3 {
+        margin: 0 0 4px 0;
+        font-size: 16px;
+      }
+
+      .sport-card p {
+        margin: 0;
+        font-size: 13px;
+        color: #bbb;
+      }
+
+      /* GALERIES + MATCHS */
+
+      section.sport-section {
+        margin-top: 40px;
+      }
+
+      section.sport-section > h2 {
+        margin-bottom: 4px;
+      }
+
+      section.sport-section > p {
+        margin-top: 0;
+        font-size: 14px;
+        color: #bbb;
+      }
+
+      .match-block {
+        margin-top: 20px;
+      }
+
+      .match-block h3 {
+        margin: 0 0 6px 0;
+        font-size: 16px;
+      }
+
+      .match-block p {
+        margin: 0 0 8px 0;
+        font-size: 13px;
+        color: #ccc;
       }
 
       .gallery {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 12px;
-        margin-top: 12px;
+        gap: 10px;
       }
 
       .gallery img {
         width: 100%;
-        height: 260px;
+        height: 230px;
         object-fit: cover;
-        border-radius: 4px;
+        border-radius: 6px;
       }
 
-      section {
-        margin-top: 30px;
+      /* RESPONSIVE */
+
+      @media (max-width: 750px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 8px;
+        }
+
+        header nav {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>PORTFOLIO DE LOELIE</h1>
+      <h1>Portfolio de Loelie</h1>
       <nav>
         <a href="#accueil">Accueil</a>
-        <a href="#photos">Toutes les photos</a>
-        <a href="#football">Football</a>
-        <a href="#basket">Basket</a>
-        <a href="#autres">Autres sports</a>
+        <a href="#portfolio-menu">Mon travail</a>
+        <a href="#contact">Contact</a>
       </nav>
     </header>
 
     <main>
-      <!-- Accueil -->
+      <!-- HERO : photo de toi + texte + réseaux -->
       <section id="accueil" class="hero">
-        <h2>Photographie de sport & mouvement</h2>
-        <p>
-          Portfolio personnel de Loelie. Photos de football, basket et autres sports,
-          classées par catégories pour retrouver facilement chaque moment.
-        </p>
-        <a href="#photos" class="btn">Voir toutes les photos</a>
+        <div class="hero-photo">
+          <!-- Mets ta photo à toi : renomme ton fichier en "portrait.jpg" et uploade-le -->
+          <img src="portrait.jpg" alt="Photo de Loelie" />
+        </div>
+        <div class="hero-text">
+          <h2>Photographie de sport & action</h2>
+          <p>
+            Je suis Loelie, photographe passionnée par le sport et le mouvement :
+            football, basket, volley, sports de combat et plus encore.
+            J’aime capturer l’intensité des matchs, les émotions des joueuses
+            et les petits détails que l’on ne voit pas toujours en direct.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#portfolio-menu" class="btn btn-primary">Voir mon travail</a>
+            <a href="#contact" class="btn btn-ghost">Me contacter</a>
+          </div>
+
+          <!-- 🔗 LIENS VERS TES RÉSEAUX -->
+          <div class="social-links">
+            <span>Mes réseaux :</span>
+            <a href="https://www.instagram.com/ton_insta" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@ton_tiktok" target="_blank">TikTok</a>
+            <a href="https://www.youtube.com/@ta_chaine" target="_blank">YouTube</a>
+            <a href="https://x.com/ton_compte" target="_blank">X/Twitter</a>
+          </div>
+        </div>
       </section>
 
-      <!-- Section liens vers toutes les photos -->
-      <section id="photos">
-        <h2>Toutes les photos</h2>
+      <!-- MENU : cartes vers chaque sport -->
+      <section id="portfolio-menu">
+        <h2>Mon travail par sport</h2>
+        <p>Choisis une catégorie pour voir les matchs et les séries de photos.</p>
+
+        <div class="sport-grid">
+          <a class="sport-card" href="#foot">
+            <h3>Football</h3>
+            <p>Matches, entraînements, actions de jeu.</p>
+          </a>
+
+          <a class="sport-card" href="#basket">
+            <h3>Basket</h3>
+            <p>Matchs indoor, shoots, contacts, celebrations.</p>
+          </a>
+
+          <a class="sport-card" href="#volley">
+            <h3>Volley</h3>
+            <p>Smash, réception, ambiance d’équipe.</p>
+          </a>
+
+          <a class="sport-card" href="#combat">
+            <h3>Sports de combat</h3>
+            <p>Boxe, MMA, karaté, etc.</p>
+          </a>
+
+          <a class="sport-card" href="#autres">
+            <h3>Autres sports</h3>
+            <p>Athlé, fitness, autres disciplines.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- FOOTBALL -->
+      <section id="foot" class="sport-section">
+        <h2>Football</h2>
+        <p>Mes meilleures photos de football, classées par match.</p>
+
+        <!-- Meilleures photos -->
+        <div class="match-block">
+          <h3>Meilleures photos – sélection</h3>
+          <div class="gallery">
+            <!-- mets ici tes meilleures photos de foot -->
+            <img src="foot-best1.jpg" alt="Football best 1" />
+            <img src="foot-best2.jpg" alt="Football best 2" />
+            <img src="foot-best3.jpg" alt="Football best 3" />
+          </div>
+        </div>
+
+        <!-- Match 1 -->
+        <div class="match-block">
+          <h3>Match 1 – titre du match</h3>
+          <p>Par exemple : YB U20 vs X, date, compétition, etc.</p>
+          <div class="gallery">
+            <img src="foot-m1-1.jpg" alt="Football match 1 - photo 1" />
+            <img src="foot-m1-2.jpg" alt="Football match 1 - photo 2" />
+            <img src="foot-m1-3.jpg" alt="Football match 1 - photo 3" />
+          </div>
+        </div>
+
+        <!-- Match 2 -->
+        <div class="match-block">
+          <h3>Match 2 – titre du match</h3>
+          <p>Tu peux dupliquer ce bloc et changer les noms d’images.</p>
+          <div class="gallery">
+            <img src="foot-m2-1.jpg" alt="Football match 2 - photo 1" />
+            <img src="foot-m2-2.jpg" alt="Football match 2 - photo 2" />
+          </div>
+        </div>
+      </section>
+
+      <!-- BASKET -->
+      <section id="basket" class="sport-section">
+        <h2>Basket</h2>
+        <p>Photos de matchs, actions, détails techniques.</p>
+
+        <div class="match-block">
+          <h3>Meilleures photos – Basket</h3>
+          <div class="gallery">
+            <img src="basket-best1.jpg" alt="Basket best 1" />
+            <img src="basket-best2.jpg" alt="Basket best 2" />
+          </div>
+        </div>
+
+        <div class="match-block">
+          <h3>Match basket 1</h3>
+          <div class="gallery">
+            <img src="basket-m1-1.jpg" alt="Basket match 1 - photo 1" />
+            <img src="basket-m1-2.jpg" alt="Basket match 1 - photo 2" />
+          </div>
+        </div>
+      </section>
+
+      <!-- VOLLEY -->
+      <section id="volley" class="sport-section">
+        <h2>Volley</h2>
+        <p>Actions au filet, défenses, ambiance d’équipe.</p>
+
+        <div class="match-block">
+          <h3>Meilleures photos – Volley</h3>
+          <div class="gallery">
+            <img src="volley-best1.jpg" alt="Volley best 1" />
+          </div>
+        </div>
+      </section>
+
+      <!-- SPORTS DE COMBAT -->
+      <section id="combat" class="sport-section">
+        <h2>Sports de combat</h2>
+        <p>Intensité, impact et émotions sur le ring/dojo.</p>
+
+        <div class="match-block">
+          <h3>Meilleures photos – Combat</h3>
+          <div class="gallery">
+            <img src="combat-best1.jpg" alt="Combat best 1" />
+          </div>
+        </div>
+      </section>
+
+      <!-- AUTRES SPORTS -->
+      <section id="autres" class="sport-section">
+        <h2>Autres sports</h2>
+        <p>Tout ce qui ne rentre pas dans les catégories au-dessus.</p>
+
+        <div class="match-block">
+          <h3>Meilleures photos – Autres</h3>
+          <div class="gallery">
+            <img src="other-best1.jpg" alt="Autres sports best 1" />
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="sport-section">
+        <h2>Contact</h2>
         <p>
-          Choisis une catégorie pour voir les séries de photos par sport :
+          Pour une collaboration, un projet ou un shooting :<br />
+          Email : tonmail@example.com<br />
+          Instagram : @ton_insta
         </p>
-        <ul class="category-nav">
-          <li><a href="#foo
+      </section>
+    </main>
+  </body>
+</html>
