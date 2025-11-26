@@ -80,6 +80,7 @@
         border: 1px solid #f5f5f5;
         text-decoration: none;
         font-size: 14px;
+        cursor: pointer;
       }
 
       .btn-primary {
@@ -197,6 +198,11 @@
         border-radius: 6px;
       }
 
+      /* CACHER LE MENU + LES PHOTOS AU DÉBUT */
+      .hidden {
+        display: none;
+      }
+
       /* RESPONSIVE */
 
       @media (max-width: 750px) {
@@ -223,7 +229,7 @@
       <h1>Portfolio de Loelie</h1>
       <nav>
         <a href="#accueil">Accueil</a>
-        <a href="#portfolio-menu">Mon travail</a>
+        <a href="#" onclick="openPortfolioMenu(); return false;">Mon travail</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -245,154 +251,171 @@
           </p>
 
           <div class="hero-buttons">
-            <a href="#portfolio-menu" class="btn btn-primary">Voir mon travail</a>
+            <a
+              href="#"
+              class="btn btn-primary"
+              onclick="openPortfolioMenu(); return false;"
+            >
+              Voir mon travail
+            </a>
             <a href="#contact" class="btn btn-ghost">Me contacter</a>
           </div>
 
           <!-- 🔗 LIENS VERS TES RÉSEAUX -->
           <div class="social-links">
             <span>Mes réseaux :</span>
-            <a href="https://www.instagram.com/ton_insta" target="_blank">Instagram</a>
-            <a href="https://www.tiktok.com/@ton_tiktok" target="_blank">TikTok</a>
-            <a href="https://www.youtube.com/@ta_chaine" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/ton_insta" target="_blank"
+              >Instagram</a
+            >
+            <a href="https://www.tiktok.com/@ton_tiktok" target="_blank"
+              >TikTok</a
+            >
+            <a href="https://www.youtube.com/@ta_chaine" target="_blank"
+              >YouTube</a
+            >
             <a href="https://x.com/ton_compte" target="_blank">X/Twitter</a>
           </div>
         </div>
       </section>
 
-      <!-- MENU : cartes vers chaque sport -->
-      <section id="portfolio-menu">
-        <h2>Mon travail par sport</h2>
-        <p>Choisis une catégorie pour voir les matchs et les séries de photos.</p>
+      <!-- ⚠️ TOUT LE MENU + LES PHOTOS SONT CACHÉS AU DÉBUT -->
+      <div id="portfolio-wrapper" class="hidden">
+        <!-- MENU : cartes vers chaque sport -->
+        <section id="portfolio-menu">
+          <h2>Mon travail par sport</h2>
+          <p>
+            Choisis une catégorie pour voir les matchs et les séries de photos.
+          </p>
 
-        <div class="sport-grid">
-          <a class="sport-card" href="#foot">
-            <h3>Football</h3>
-            <p>Matches, entraînements, actions de jeu.</p>
-          </a>
+          <div class="sport-grid">
+            <a class="sport-card" href="#foot">
+              <h3>Football</h3>
+              <p>Matches, entraînements, actions de jeu.</p>
+            </a>
 
-          <a class="sport-card" href="#basket">
-            <h3>Basket</h3>
-            <p>Matchs indoor, shoots, contacts, celebrations.</p>
-          </a>
+            <a class="sport-card" href="#basket">
+              <h3>Basket</h3>
+              <p>Matchs indoor, shoots, contacts, celebrations.</p>
+            </a>
 
-          <a class="sport-card" href="#volley">
-            <h3>Volley</h3>
-            <p>Smash, réception, ambiance d’équipe.</p>
-          </a>
+            <a class="sport-card" href="#volley">
+              <h3>Volley</h3>
+              <p>Smash, réception, ambiance d’équipe.</p>
+            </a>
 
-          <a class="sport-card" href="#combat">
-            <h3>Sports de combat</h3>
-            <p>Boxe, MMA, karaté, etc.</p>
-          </a>
+            <a class="sport-card" href="#combat">
+              <h3>Sports de combat</h3>
+              <p>Boxe, MMA, karaté, etc.</p>
+            </a>
 
-          <a class="sport-card" href="#autres">
-            <h3>Autres sports</h3>
-            <p>Athlé, fitness, autres disciplines.</p>
-          </a>
-        </div>
-      </section>
-
-      <!-- FOOTBALL -->
-      <section id="foot" class="sport-section">
-        <h2>Football</h2>
-        <p>Mes meilleures photos de football, classées par match.</p>
-
-        <!-- Meilleures photos -->
-        <div class="match-block">
-          <h3>Meilleures photos – sélection</h3>
-          <div class="gallery">
-            <!-- mets ici tes meilleures photos de foot -->
-            <img src="foot-best1.jpg" alt="Football best 1" />
-            <img src="foot-best2.jpg" alt="Football best 2" />
-            <img src="foot-best3.jpg" alt="Football best 3" />
+            <a class="sport-card" href="#autres">
+              <h3>Autres sports</h3>
+              <p>Athlé, fitness, autres disciplines.</p>
+            </a>
           </div>
-        </div>
+        </section>
 
-        <!-- Match 1 -->
-        <div class="match-block">
-          <h3>Match 1 – titre du match</h3>
-          <p>Par exemple : YB U20 vs X, date, compétition, etc.</p>
-          <div class="gallery">
-            <img src="foot-m1-1.jpg" alt="Football match 1 - photo 1" />
-            <img src="foot-m1-2.jpg" alt="Football match 1 - photo 2" />
-            <img src="foot-m1-3.jpg" alt="Football match 1 - photo 3" />
+        <!-- FOOTBALL -->
+        <section id="foot" class="sport-section">
+          <h2>Football</h2>
+          <p>Mes meilleures photos de football, classées par match.</p>
+
+          <!-- Meilleures photos -->
+          <div class="match-block">
+            <h3>Meilleures photos – sélection</h3>
+            <div class="gallery">
+              <!-- mets ici tes meilleures photos de foot -->
+              <img src="foot-best1.jpg" alt="Football best 1" />
+              <img src="foot-best2.jpg" alt="Football best 2" />
+              <img src="foot-best3.jpg" alt="Football best 3" />
+            </div>
           </div>
-        </div>
 
-        <!-- Match 2 -->
-        <div class="match-block">
-          <h3>Match 2 – titre du match</h3>
-          <p>Tu peux dupliquer ce bloc et changer les noms d’images.</p>
-          <div class="gallery">
-            <img src="foot-m2-1.jpg" alt="Football match 2 - photo 1" />
-            <img src="foot-m2-2.jpg" alt="Football match 2 - photo 2" />
+          <!-- Match 1 -->
+          <div class="match-block">
+            <h3>Match 1 – titre du match</h3>
+            <p>Par exemple : YB U20 vs X, date, compétition, etc.</p>
+            <div class="gallery">
+              <img src="foot-m1-1.jpg" alt="Football match 1 - photo 1" />
+              <img src="foot-m1-2.jpg" alt="Football match 1 - photo 2" />
+              <img src="foot-m1-3.jpg" alt="Football match 1 - photo 3" />
+            </div>
           </div>
-        </div>
-      </section>
 
-      <!-- BASKET -->
-      <section id="basket" class="sport-section">
-        <h2>Basket</h2>
-        <p>Photos de matchs, actions, détails techniques.</p>
-
-        <div class="match-block">
-          <h3>Meilleures photos – Basket</h3>
-          <div class="gallery">
-            <img src="basket-best1.jpg" alt="Basket best 1" />
-            <img src="basket-best2.jpg" alt="Basket best 2" />
+          <!-- Match 2 -->
+          <div class="match-block">
+            <h3>Match 2 – titre du match</h3>
+            <p>Tu peux dupliquer ce bloc et changer les noms d’images.</p>
+            <div class="gallery">
+              <img src="foot-m2-1.jpg" alt="Football match 2 - photo 1" />
+              <img src="foot-m2-2.jpg" alt="Football match 2 - photo 2" />
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div class="match-block">
-          <h3>Match basket 1</h3>
-          <div class="gallery">
-            <img src="basket-m1-1.jpg" alt="Basket match 1 - photo 1" />
-            <img src="basket-m1-2.jpg" alt="Basket match 1 - photo 2" />
+        <!-- BASKET -->
+        <section id="basket" class="sport-section">
+          <h2>Basket</h2>
+          <p>Photos de matchs, actions, détails techniques.</p>
+
+          <div class="match-block">
+            <h3>Meilleures photos – Basket</h3>
+            <div class="gallery">
+              <img src="basket-best1.jpg" alt="Basket best 1" />
+              <img src="basket-best2.jpg" alt="Basket best 2" />
+            </div>
           </div>
-        </div>
-      </section>
 
-      <!-- VOLLEY -->
-      <section id="volley" class="sport-section">
-        <h2>Volley</h2>
-        <p>Actions au filet, défenses, ambiance d’équipe.</p>
-
-        <div class="match-block">
-          <h3>Meilleures photos – Volley</h3>
-          <div class="gallery">
-            <img src="volley-best1.jpg" alt="Volley best 1" />
+          <div class="match-block">
+            <h3>Match basket 1</h3>
+            <div class="gallery">
+              <img src="basket-m1-1.jpg" alt="Basket match 1 - photo 1" />
+              <img src="basket-m1-2.jpg" alt="Basket match 1 - photo 2" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- SPORTS DE COMBAT -->
-      <section id="combat" class="sport-section">
-        <h2>Sports de combat</h2>
-        <p>Intensité, impact et émotions sur le ring/dojo.</p>
+        <!-- VOLLEY -->
+        <section id="volley" class="sport-section">
+          <h2>Volley</h2>
+          <p>Actions au filet, défenses, ambiance d’équipe.</p>
 
-        <div class="match-block">
-          <h3>Meilleures photos – Combat</h3>
-          <div class="gallery">
-            <img src="combat-best1.jpg" alt="Combat best 1" />
+          <div class="match-block">
+            <h3>Meilleures photos – Volley</h3>
+            <div class="gallery">
+              <img src="volley-best1.jpg" alt="Volley best 1" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- AUTRES SPORTS -->
-      <section id="autres" class="sport-section">
-        <h2>Autres sports</h2>
-        <p>Tout ce qui ne rentre pas dans les catégories au-dessus.</p>
+        <!-- SPORTS DE COMBAT -->
+        <section id="combat" class="sport-section">
+          <h2>Sports de combat</h2>
+          <p>Intensité, impact et émotions sur le ring/dojo.</p>
 
-        <div class="match-block">
-          <h3>Meilleures photos – Autres</h3>
-          <div class="gallery">
-            <img src="other-best1.jpg" alt="Autres sports best 1" />
+          <div class="match-block">
+            <h3>Meilleures photos – Combat</h3>
+            <div class="gallery">
+              <img src="combat-best1.jpg" alt="Combat best 1" />
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- CONTACT -->
+        <!-- AUTRES SPORTS -->
+        <section id="autres" class="sport-section">
+          <h2>Autres sports</h2>
+          <p>Tout ce qui ne rentre pas dans les catégories au-dessus.</p>
+
+          <div class="match-block">
+            <h3>Meilleures photos – Autres</h3>
+            <div class="gallery">
+              <img src="other-best1.jpg" alt="Autres sports best 1" />
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- CONTACT (toujours visible) -->
       <section id="contact" class="sport-section">
         <h2>Contact</h2>
         <p>
@@ -402,5 +425,19 @@
         </p>
       </section>
     </main>
+
+    <!-- SCRIPT : affiche le menu + fait défiler -->
+    <script>
+      function openPortfolioMenu() {
+        const wrapper = document.getElementById("portfolio-wrapper");
+        if (wrapper) {
+          wrapper.classList.remove("hidden");
+          const menu = document.getElementById("portfolio-menu");
+          if (menu) {
+            menu.scrollIntoView({ behavior: "smooth" });
+          }
+        }
+      }
+    </script>
   </body>
 </html>
